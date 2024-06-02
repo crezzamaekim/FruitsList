@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+      td {
+        text-align: center;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="4">
+          My Fruits
+        </td>
+      </tr>
+      <tr>
+        <td>Image</td>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Facts</td>
+      </tr>
+      <?php
+
+
+        
+        $data = array();
+
+        
+        array_push($data, array("images/banana.jpg", "Banana", "Color Yellow", "Bananas are a healthful addition to a balanced diet, as they provide a range of nutrients and are a good source of fiber."));
+        array_push($data, array("images/apple.jpg", "Apple", "Color Red", "Apples are nutritious and may offer several health benefits, including improved heart health and a reduced risk of certain cancers."));
+        array_push($data, array("images/orange.jpg", "Orange", "Color Orange", "Oranges are well known for their vitamin C content and their role in boosting the immune system."));
+        array_push($data, array("images/strawberry.jpg", "Strawberry", "Color Red", "Strawberries are rich in vitamins, minerals, and antioxidants, and are beneficial for heart health."));
+        array_push($data, array("images/grape.jpg", "Grape", "Color Purple", "Grapes are packed with nutrients, especially vitamins C and K. They are also high in antioxidants."));
+        array_push($data, array("images/kiwi.jpg", "Kiwi", "Color Green", "Kiwis are small fruits that pack a lot of flavor and plenty of health benefits. They are full of nutrients like vitamin C, vitamin K, vitamin E, folate, and potassium."));
+        array_push($data, array("images/pear.jpg", "Pear", "Color Green", "Pears are excellent sources of dietary fiber and a good source of vitamin C. They are low in calories and contain no fat or cholesterol."));
+        array_push($data, array("images/pineapple.jpg", "Pineapple", "Color Yellow", "Pineapples are tropical fruits that are rich in vitamins, enzymes and antioxidants. They may help boost the immune system and build strong bones."));
+        array_push($data, array("images/watermelon.jpg", "Watermelon", "Color Red", "Watermelon is a hydrating fruit that's full of vitamins A, B6 and C, lots of lycopene, antioxidants and amino acids."));
+        array_push($data, array("images/blueberry.jpg", "Blueberry", "Color Blue", "Blueberries are low in calories and incredibly healthy. They are high in fiber, vitamin C and vitamin K."));
+
+        
+        for($x = 0; $x < count($data); $x++) {
+          $fruit = $data[$x];
+
+          
+          echo "<tr>
+                  <td><img src='{$fruit[0]}' alt='{$fruit[1]}'/></td>
+                  <td>{$fruit[1]}</td>
+                  <td>{$fruit[2]}</td>
+                  <td>{$fruit[3]}</td>
+                </tr>";
+        }
+      ?>
+    </table>
+  </body>
+</html>
+
+<?php
+
+$images = new FilesystemIterator('./images');
+
+foreach($images as $images){
+
+  print_r(hetimagesize($iamge));
+}
+
+?>
